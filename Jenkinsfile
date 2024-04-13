@@ -10,5 +10,10 @@ pipeline {
                 cleanWs()
                 }
 	}
-	 }
-}
+	stage("checkout from SCM"){
+	        steps {
+	git branch: 'main', credentialsId: 'github', url: 'https://github.com/rukmini-jadhav/register-app'
+	      }
+           }
+	}
+    }
